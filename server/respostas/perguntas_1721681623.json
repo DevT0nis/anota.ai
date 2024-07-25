@@ -1,0 +1,52 @@
+[
+    {
+        "pergunta": "Qual a principal funcionalidade descrita no texto?",
+        "resposta_esperada": "A principal funcionalidade é a transcrição de voz para texto.",
+        "explicacao": "O texto menciona 'captar sua voz', 'anotar tudo que você tiver falando' e 'salvar isso aqui', indicando uma ferramenta de transcrição."
+    },
+    {
+        "pergunta": "A quem o texto se dirige?",
+        "resposta_esperada": "O texto se dirige a um usuário que precisa transcrever suas falas.",
+        "explicacao": "O uso de 'você' e a frase 'começar aqui a falar' indicam um diálogo com o usuário."
+    },
+    {
+        "pergunta": "Qual a primeira ação que o usuário deve realizar?",
+        "resposta_esperada": "O usuário deve começar a falar.",
+        "explicacao": "A frase 'começar aqui a falar' orienta o usuário a iniciar a fala para a transcrição."
+    },
+    {
+        "pergunta": "O que o sistema fará com a fala do usuário?",
+        "resposta_esperada": "O sistema irá capturar a voz do usuário, anotar tudo o que for dito e, ao final, permitir o salvamento da transcrição.",
+        "explicacao": "O texto afirma que o sistema 'vai captar sua voz', 'vai anotar tudo que você tiver falando' e 'no final você vai salvar isso aqui'."
+    },
+    {
+        "pergunta": "A linguagem utilizada no texto é formal ou informal? Justifique.",
+        "resposta_esperada": "A linguagem é informal.",
+        "explicacao": "O uso de expressões como 'né' e 'qual que é a pegada' caracteriza uma linguagem coloquial e informal."
+    },
+    {
+        "pergunta": "Identifique e explique o significado da expressão informal presente na frase: 'E aí qual que é a pegada dele né?'",
+        "resposta_esperada": "A expressão informal é 'qual que é a pegada'. Significa, nesse contexto, 'como funciona' ou 'qual a finalidade'.",
+        "explicacao": "A expressão é utilizada para perguntar de forma informal sobre o funcionamento ou a finalidade de algo."
+    },
+    {
+        "pergunta": "O texto menciona explicitamente o formato de salvamento da transcrição?",
+        "resposta_esperada": "Não, o texto não menciona o formato de salvamento.",
+        "explicacao": "O texto apenas diz que o usuário poderá 'salvar isso aqui', sem especificar o formato."
+    },
+    {
+        "pergunta": "É possível inferir do texto se o processo de transcrição ocorre em tempo real?",
+        "resposta_esperada": "Sim, é possível inferir que a transcrição ocorre em tempo real.",
+        "explicacao": "A frase 'vai anotar tudo que você tiver falando' sugere que a transcrição acontece simultaneamente à fala."
+    },
+    {
+        "pergunta": "Reescreva o texto utilizando uma linguagem mais formal.",
+        "resposta_esperada": "Inicie o processo de fala. O sistema irá capturar sua voz, transcrevendo automaticamente todo o conteúdo. Ao final, você poderá salvar a transcrição gerada.",
+        "explicacao": "Esta resposta exemplifica uma possível reescrita do texto com linguagem mais formal, eliminando as gírias e expressões informais."
+    },
+    {
+        "pergunta": "Com base no texto, cite duas possíveis aplicações práticas para a ferramenta descrita.",
+        "resposta_esperada": "Duas possíveis aplicações são: 1) transcrição de entrevistas e 2) criação de legendas para vídeos.",
+        "explicacao": "A ferramenta de transcrição de voz para texto pode ser utilizada em diversas situações, como transcrever entrevistas, reuniões, aulas, etc. Além disso, pode auxiliar na criação de legendas para vídeos de forma mais rápida e eficiente."
+    }
+]

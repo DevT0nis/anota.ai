@@ -1,0 +1,13 @@
+flask
+flask-cors
+language_tool_python
+python-docx
+openai
+setuptools
+python-dotenv
+werkzeug 
+docx
+json
+Flask==2.0.2
+python-dotenv==0.19.2
+logging
