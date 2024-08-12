@@ -1,6 +1,5 @@
 import os
 from werkzeug.utils import secure_filename
-from docx import Document
 from app.agents.agentCorrecao import correct_text
 from app.utils.helpers import arquivo_permitido
 

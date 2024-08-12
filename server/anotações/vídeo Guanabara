@@ -1,0 +1,23 @@
+Resumo de Anotação de Aula sobre HTML e CSS
+
+HTML (HyperText Markup Language):
+
+Definição: HTML é a linguagem padrão para criar páginas web. Ele usa uma estrutura de marcação para definir o conteúdo da página.
+Estrutura Básica: Uma página HTML é composta por elementos organizados em uma hierarquia de tags. As principais tags incluem <html>, <head>, <body>, <title>, <h1>, <p>, <a>, entre outras.
+Elementos e Atributos: Cada elemento HTML pode ter atributos que fornecem informações adicionais. Por exemplo, um link <a> pode ter um atributo href que define o endereço de destino.
+Semântica: HTML5 introduziu tags semânticas como <header>, <footer>, <article>, e <section> para descrever melhor a estrutura do conteúdo.
+Formulários: HTML também permite a criação de formulários para coleta de dados do usuário, utilizando tags como <form>, <input>, <textarea>, e <button>.
+CSS (Cascading Style Sheets):
+
+Definição: CSS é a linguagem usada para descrever a apresentação de uma página HTML, incluindo layout, cores, fontes e outros aspectos visuais.
+Seletores: CSS usa seletores para "selecionar" quais elementos HTML devem ser estilizados. Exemplos de seletores incluem seletores de tipo, classe, ID e pseudoclasse.
+Propriedades e Valores: CSS consiste em propriedades (como color, font-size, margin, padding) e valores que determinam o estilo de um elemento.
+Box Model: O box model é um conceito fundamental em CSS que define a estrutura de um elemento, incluindo margem, borda, padding e conteúdo.
+Layouts: CSS permite criar layouts complexos utilizando técnicas como flexbox e grid layout. Essas técnicas ajudam a distribuir espaço e alinhar elementos de forma responsiva.
+Responsividade: A responsividade é um aspecto crucial do design moderno, permitindo que as páginas se adaptem a diferentes tamanhos de tela. Media queries são uma ferramenta importante para atingir esse objetivo.
+Integração de HTML e CSS:
+
+Inline CSS: CSS pode ser adicionado diretamente dentro das tags HTML usando o atributo style.
+Internal CSS: CSS pode ser incluído no documento HTML dentro da tag <style> no <head>.
+External CSS: CSS pode ser escrito em um arquivo separado e vinculado ao documento HTML usando a tag <link> no <head>.
+Boas Práticas: Separar a estrutura (HTML) da apresentação (CSS) é uma prática recomendada para manter o código organizado e fácil de manter.

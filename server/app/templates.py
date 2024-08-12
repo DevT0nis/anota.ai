@@ -40,53 +40,25 @@ Texto para revisão:
 Texto corrigido:
 """
 
-TEMPLATE_TEXTO = """
-Recuperação Aumentada com Geração (RAG)
-Definição:
-A Recuperação Aumentada com Geração (RAG) é uma abordagem híbrida que combina técnicas de recuperação de informações (IR) com modelos de geração de linguagem natural (NLG). Essa técnica visa melhorar a qualidade e a precisão das respostas fornecidas por sistemas de IA, especialmente em tarefas de question answering (QA) e assistência virtual.
+TEMPLATE_AGENT_AVALIADOR = """
+Você é um avaliador especialista. Sua tarefa é avaliar a resposta fornecida pelo usuário com base no texto de referência. O texto de referência é: '{texto_referencia}', e a resposta do usuário é: '{resposta_usuario}'.
 
-Componentes Principais:
+Sua avaliação deve incluir:
 
-Recuperação de Documentos:
+1. **Nota de Avaliação**: Uma pontuação de 0 a 100% que reflete a precisão da resposta do usuário em relação ao texto de referência.
+2. **Feedback Detalhado**:
+   - **O que o usuário acertou**: Detalhe as partes da resposta do usuário que estão corretas ou parcialmente corretas.
+   - **O que o usuário errou**: Indique os erros ou pontos de falha na resposta do usuário e ofereça correções ou explicações.
 
-Retrieval Component: Primeiro, um módulo de recuperação de informações é usado para buscar documentos relevantes de uma base de dados ou um conjunto de documentos, com base na consulta do usuário.
-Índices e Vetores: Utiliza índices invertidos, embeddings de texto e outras técnicas de IR para identificar os documentos mais relevantes.
-Geração de Respostas:
+Estruture a avaliação da seguinte maneira:
 
-Generation Component: Em seguida, um modelo de geração de linguagem, como o GPT (Generative Pre-trained Transformer), é usado para gerar respostas baseadas nos documentos recuperados.
-Contexto: O modelo utiliza o contexto fornecido pelos documentos recuperados para gerar respostas mais precisas e contextualmente relevantes.
-Fluxo de Trabalho:
+{
+    "nota": <percentagem de 0 a 100>,
+    "feedback": {
+        "acertos": "Descrição dos acertos do usuário",
+        "erros": "Descrição dos erros do usuário e correções"
+    }
+}
 
-Consulta do Usuário: O usuário faz uma pergunta ou consulta.
-Recuperação: O sistema de IR busca documentos relevantes que podem conter a resposta.
-Geração: Os documentos recuperados são passados para o modelo de geração, que cria uma resposta combinando as informações dos documentos com suas capacidades de geração de linguagem.
-Resposta: A resposta gerada é retornada ao usuário.
-Vantagens:
-
-Precisão Melhorada: Combina o poder de busca de documentos relevantes com a capacidade de geração de texto contextualizado.
-Flexibilidade: Pode ser aplicado a uma ampla gama de tarefas, desde QA até criação de conteúdo assistido por IA.
-Escalabilidade: Pode lidar com grandes volumes de dados e consultas complexas.
-Aplicações:
-
-Assistentes Virtuais: Melhora a capacidade dos assistentes virtuais de responder a perguntas complexas e fornecer informações detalhadas.
-Educação: Utilizado para criar materiais de estudo personalizados e responder a perguntas dos alunos com base em grandes conjuntos de dados educacionais.
-Suporte ao Cliente: Auxilia na resolução de consultas de clientes de forma rápida e precisa, acessando bases de conhecimento e gerando respostas relevantes.
-Desafios:
-
-Qualidade dos Dados: A eficácia do RAG depende da qualidade e relevância dos dados nos documentos recuperados.
-Desempenho Computacional: Modelos de geração de linguagem podem ser computacionalmente intensivos, exigindo recursos significativos para treinamento e inferência.
-Integração: A integração eficaz dos componentes de recuperação e geração é crucial para o desempenho do sistema.
-Exemplos de Ferramentas e Modelos:
-
-OpenAI GPT-3/4: Utilizado para geração de linguagem.
-Elasticsearch: Comumente usado para recuperação de informações.
-Transformers (Hugging Face): Biblioteca popular que inclui modelos e ferramentas para NLG e IR.
-Conclusão:
-A Recuperação Aumentada com Geração representa um avanço significativo na forma como os sistemas de IA interagem com grandes conjuntos de dados para fornecer respostas detalhadas e precisas. Ao combinar a recuperação eficiente de documentos com a geração contextualizada de respostas, o RAG oferece um potencial vasto para melhorar a interação homem-máquina em diversas aplicações.
-
-
-
-
-
+Certifique-se de que a nota e o feedback sejam precisos e baseados na correspondência entre a resposta do usuário e o texto de referência.
 """
-

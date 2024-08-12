@@ -26,7 +26,7 @@ def salvar_transcricao():
             content = f.read()
 
         # Configurar a API do Google Generative AI
-        genai.configure(api_key="AIzaSyD4D3q6oSVGGvKYnwyXOr9D6wy-B4IsueQ") 
+        genai.configure(api_key="AIzaSyDocQvT1c2mJ5Jf_wMfVwDFLwvsv6QYezc") 
 
         
         generation_config = {

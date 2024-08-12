@@ -6,7 +6,7 @@ import logging
 from flask import Blueprint, current_app, jsonify, request
 import google.generativeai as genai
 from app.models.speech_recognition import Transcricao
-from app.templates import TEMPLATE_AGENT_GERADOR
+from app.templates import TEMPLATE_AGENT_GERADOR, TEMPLATE_AGENT_AVALIADOR
 
 import google.generativeai as genai
 
@@ -150,7 +150,7 @@ def gerar_perguntas(filename):
 
 
         # Configuração da API
-        genai.configure(api_key="AIzaSyD4D3q6oSVGGvKYnwyXOr9D6wy-B4IsueQ") 
+        genai.configure(api_key="AIzaSyDocQvT1c2mJ5Jf_wMfVwDFLwvsv6QYezc") 
 
         generation_config = {
             "temperature": 1,
@@ -201,6 +201,83 @@ def gerar_perguntas(filename):
     except Exception as e:
         logging.error(f"Erro ao gerar perguntas: {e}")
         return jsonify({"erro": str(e)}), 500
+    
+@transcricao_bp.route('/avaliar-resposta', methods=['POST'])
+def avaliar_resposta():
+    try:
+       try:
+        data = request.json
+        resposta_usuario = data.get('resposta')
+        texto_referencia = data.get('texto_referencia')
+
+        if not texto_referencia:
+            raise ValueError("'texto_referencia' está faltando")
+
+  
+        # Configuração da API
+        genai.configure(api_key="AIzaSyDocQvT1c2mJ5Jf_wMfVwDFLwvsv6QYezc")
+
+        evaluation_config = {
+            "temperature": 0.7,
+            "top_p": 0.9,
+            "top_k": 50,
+            "max_output_tokens": 4096,
+            "response_mime_type": "text/plain",
+        }
+
+        model = genai.GenerativeModel(
+            model_name="gemini-1.5-pro",
+            generation_config=evaluation_config,
+        )
+
+        prompt = TEMPLATE_AGENT_AVALIADOR.format(resposta=resposta_usuario)
+        logging.debug(f"Prompt enviado para o modelo: {prompt}")
+
+        chat_session = model.start_chat(history=[])
+        response = chat_session.send_message(prompt)
+
+        logging.debug(f"Resposta do modelo: {response}")
+
+        if not response.candidates or not response.candidates[0].content:
+            logging.error("Resposta do modelo está vazia ou malformada.")
+            return jsonify({"erro": "Resposta do modelo está vazia ou malformada."}), 500
+
+        try:
+            avaliacao = json.loads(response.candidates[0].content)
+            if 'texto_referencia' not in avaliacao:
+                logging.error("Chave 'texto_referencia' ausente na resposta do modelo.")
+                return jsonify({"erro": "Chave 'texto_referencia' ausente na resposta do modelo."}), 500
+        except json.JSONDecodeError as e:
+            logging.error(f"Erro ao decodificar JSON: {e}")
+            return jsonify({"erro": "Erro ao processar a resposta do modelo."}), 500
+
+        nota = avaliacao.get('nota', 0)
+        feedback = avaliacao.get('feedback', "Nenhum feedback disponível")
+
+        if nota is None or feedback is None:
+            logging.error("Avaliador não retornou nota ou feedback adequados")
+            return jsonify({"erro": "Avaliador não retornou nota ou feedback adequados"}), 500
+
+        logging.info(f"Nota: {nota}%, Feedback: {feedback}")
+        
+         nota = calcular_nota(resposta_usuario, texto_referencia)
+        feedback = gerar_feedback(resposta_usuario, texto_referencia)
+
+        return jsonify({'nota': nota, 'feedback': feedback})
+
+        return jsonify({
+            "nota": nota,
+            "feedback": feedback
+        }), 200
+
+    except Exception as e:
+        logging.error(f"Erro ao avaliar resposta: {e}")
+        return jsonify({"erro": str(e)}), 500
+
+
+
+
+
 
 @transcricao_bp.route('/listar-perguntas', methods=['GET'])
 def listar_perguntas():

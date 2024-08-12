@@ -1,0 +1,52 @@
+[
+    {
+        "pergunta": "Qual é o propósito da linguagem HTML?",
+        "resposta_esperada": "HTML é a linguagem padrão para criar a estrutura e o conteúdo de páginas web.",
+        "explicacao": "O texto define HTML como a linguagem padrão para criar páginas web, utilizando uma estrutura de marcação para definir o conteúdo."
+    },
+    {
+        "pergunta": "O que são tags semânticas em HTML5 e cite alguns exemplos?",
+        "resposta_esperada": "Tags semânticas descrevem melhor o conteúdo que contêm. Exemplos: <header>, <footer>, <article>, <section>.",
+        "explicacao": "O texto menciona que HTML5 introduziu tags semânticas para descrever melhor a estrutura do conteúdo, e lista alguns exemplos."
+    },
+    {
+        "pergunta": "Descreva a função do atributo 'href' em um elemento de âncora (<a>).",
+        "resposta_esperada": "O atributo 'href' em um elemento <a> define o endereço de destino para onde o link irá navegar quando clicado.",
+        "explicacao": "O texto afirma que um link <a> pode ter um atributo 'href' que define o endereço de destino."
+    },
+    {
+        "pergunta": "Qual linguagem é usada para estilizar a aparência visual de uma página HTML?",
+        "resposta_esperada": "CSS (Cascading Style Sheets)",
+        "explicacao": "O texto define CSS como a linguagem usada para descrever a apresentação de uma página HTML."
+    },
+    {
+        "pergunta": "Explique o conceito de 'Box Model' em CSS.",
+        "resposta_esperada": "O Box Model define a estrutura visual de um elemento HTML, incluindo margem, borda, padding e o conteúdo em si.",
+        "explicacao": "O texto descreve o Box Model como um conceito fundamental em CSS que define a estrutura de um elemento, incluindo margem, borda, padding e conteúdo."
+    },
+    {
+        "pergunta": "Cite três maneiras diferentes de integrar CSS em um documento HTML.",
+        "resposta_esperada": "1. Inline CSS (atributo 'style'); 2. Internal CSS (tag <style> dentro do <head>); 3. External CSS (arquivo separado vinculado com a tag <link>).",
+        "explicacao": "O texto lista as três formas de integrar CSS: Inline, Internal e External."
+    },
+    {
+        "pergunta": "Qual a importância da responsividade no design web moderno?",
+        "resposta_esperada": "A responsividade permite que páginas web se adaptem a diferentes tamanhos de tela, garantindo uma boa experiência do usuário em qualquer dispositivo.",
+        "explicacao": "O texto destaca a responsividade como crucial no design moderno para adaptar as páginas a diferentes tamanhos de tela."
+    },
+    {
+        "pergunta": "Para que servem os 'media queries' em CSS?",
+        "resposta_esperada": "Media queries permitem aplicar estilos CSS específicos para diferentes tamanhos de tela e tipos de mídia, sendo essenciais para a responsividade.",
+        "explicacao": "O texto menciona que 'media queries' são uma ferramenta importante para atingir a responsividade."
+    },
+    {
+        "pergunta": "Cite dois exemplos de layouts complexos que podem ser criados com CSS.",
+        "resposta_esperada": "Flexbox e Grid Layout.",
+        "explicacao": "O texto lista Flexbox e Grid Layout como técnicas para criar layouts complexos em CSS."
+    },
+    {
+        "pergunta": "Por que é considerada uma boa prática separar a estrutura (HTML) da apresentação (CSS)?",
+        "resposta_esperada": "Separar HTML e CSS torna o código mais organizado, legível e fácil de manter a longo prazo.",
+        "explicacao": "O texto finaliza recomendando a separação de estrutura (HTML) e apresentação (CSS) para manter o código organizado e fácil de manter."
+    }
+]
