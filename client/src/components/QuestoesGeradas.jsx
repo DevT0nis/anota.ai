@@ -1,63 +1,96 @@
 import React, { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
 import axios from 'axios';
+import styled, { keyframes } from 'styled-components';
+
+const shake = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateY(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateY(10px);
+  }
+`;
 
 const slideIn = keyframes`
   0% {
-    transform: translateX(80%);
+    transform: scale(0);
   }
   100% {
-    transform: translateX(0);
+    transform: scale(1);
   }
 `;
 
 const slideOut = keyframes`
   0% {
-    transform: translateX(0);
+    transform: scale(1);
   }
   100% {
-    transform: translateX(80%);
+    transform: scale(0);
   }
 `;
 
-const Container = styled.div`
-  width: 320px;
-  height: 100vh;
+const ModalContainer = styled.div`
+  width: 600px;
+  height: 400px;
   background: linear-gradient(135deg, #403e3e, #7F00FF);
   position: fixed;
-  text-align: center;
-  right: 0;
-  top: 0;
+  
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   transition: transform 0.3s ease;
   animation: ${(props) => (props.isOpen ? slideIn : slideOut)} 0.3s forwards;
-  border-radius: 30px 0 0 30px;
+  border-radius: 30px;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 `;
 
 const ToggleButton = styled.button`
-  margin-top: 30px;
-  margin-right: 250px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20px;
+  right: 20px;
   padding: 10px;
-  background-color: #fff;
+  background: linear-gradient(135deg, #403e3e, #7F00FF);
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
+  color: #fff;
+  font-size: 20px;
   transition: all 0.3s ease;
+  z-index: 1001;
+
+  animation: ${shake} 3.5s ease;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+
+  &:nth-child(even) {
+    animation-play-state: running;
+  }
 
   &:hover {
-    background-color: #8f10e9;
-    color: #fff;
+    background-color: #ff0000;
     transform: translateY(-2px);
-    box-shadow: ${(props) =>
-      props.active ? "0 10px 20px rgba(0, 0, 0, 0.2)" : "0 10px 20px rgba(0, 0, 0, 0.2)"};
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &::before {
+    content: '✨';
+    font-size: 24px;
+    color: #fff;
+    align-items: center;
   }
 `;
 
@@ -66,21 +99,6 @@ const Title = styled.h1`
   font-size: 22px;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
-`;
-
-const QuestionList = styled.div`
-  padding: 0;
-  margin: 20px 0 0 0;
-  width: 100%;
-  color: #fff;
-  overflow-y: auto;
-  flex-grow: 1;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-
-  &::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari, and Opera */
-  }
 `;
 
 const Card = styled.div`
@@ -130,8 +148,7 @@ const ValidateButton = styled.button`
     background-color: #8f10e9;
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: ${(props) =>
-      props.active ? "0 10px 20px rgba(0, 0, 0, 0.2)" : "0 10px 20px rgba(0, 0, 0, 0.2)"};
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -140,6 +157,7 @@ const ErrorMessage = styled.div`
   color: white;
   padding: 10px;
   margin-bottom: 10px;
+  border-radius: 5px;
 `;
 
 const ModalBackground = styled.div`
@@ -152,6 +170,7 @@ const ModalBackground = styled.div`
   display: ${(props) => (props.isOpen ? 'flex' : 'none')};
   justify-content: center;
   align-items: center;
+  z-index: 999;
 `;
 
 const Modal = styled.div`
@@ -174,9 +193,9 @@ const ModalContent = styled.p`
 
 const QuestoesGeradas = () => {
   const [questions, setQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [error, setError] = useState(null);
-  const [userAnswers, setUserAnswers] = useState({});
-  const [validationResults, setValidationResults] = useState({});
+  const [userAnswer, setUserAnswer] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
@@ -187,6 +206,7 @@ const QuestoesGeradas = () => {
       try {
         const response = await axios.get('http://localhost:5000/listar-perguntas');
         if (response.status === 200) {
+          console.log('Perguntas recebidas:', response.data);
           setQuestions(response.data);
         } else {
           setError('Erro ao obter perguntas.');
@@ -201,37 +221,42 @@ const QuestoesGeradas = () => {
 
     const intervalId = setInterval(() => {
       fetchQuestions();
-    }, 5000); // Consulta a cada 5 segundos
+    }, 60000);
 
-    return () => clearInterval(intervalId); // Limpa o intervalo ao desmontar o componente
+    return () => clearInterval(intervalId);
   }, []);
 
-  const handleInputChange = (index, value) => {
-    setUserAnswers({
-      ...userAnswers,
-      [index]: value,
-    });
-  };
+  const validateAnswer = async (question) => {
+    const resposta = userAnswer;
+    const textoReferencia = question.resposta_esperada;
 
-  const validateAnswer = async (index, question) => {
+    if (!resposta || !textoReferencia) {
+        setError('Por favor, preencha o campo antes de validar.');
+        return;
+    }
+
     try {
         const response = await axios.post('http://localhost:5000/avaliar-resposta', {
-            resposta: userAnswers[index],
-            texto_referencia: question.texto_referencia // Certifique-se de que isso é o que você precisa enviar
+            resposta: resposta,
+            texto_referencia: textoReferencia,
         });
 
         if (response.status === 200) {
             const { nota, feedback } = response.data;
-            setValidationResults({
-                ...validationResults,
-                [index]: {
-                    isCorrect: nota === 100, // Ajustar conforme o critério de resposta correta
-                    feedback,
-                },
-            });
-            setModalTitle('Resultado da Avaliação');
-            setModalContent(`Nota: ${nota}%\nFeedback: ${feedback}`);
-            setModalOpen(true);
+            if (nota === 100) {
+                setUserAnswer('');
+                if (currentQuestionIndex < questions.length - 1) {
+                    setCurrentQuestionIndex(currentQuestionIndex + 1);
+                } else {
+                    setModalTitle('Parabéns!');
+                    setModalContent('Você respondeu todas as perguntas corretamente!');
+                    setModalOpen(true);
+                }
+            } else {
+                setModalTitle('Tente novamente');
+                setModalContent(`Nota: ${nota}%\nFeedback: ${feedback}`);
+                setModalOpen(true);
+            }
         } else {
             setError('Erro ao avaliar resposta.');
         }
@@ -242,7 +267,6 @@ const QuestoesGeradas = () => {
 };
 
 
-
   const toggleContainer = () => {
     setIsOpen(!isOpen);
   };
@@ -251,46 +275,42 @@ const QuestoesGeradas = () => {
     setModalOpen(false);
   };
 
+  const currentQuestion = questions[currentQuestionIndex];
+
   return (
-    <Container isOpen={isOpen}>
-      <ToggleButton onClick={toggleContainer}>{isOpen ? '✕' : '☰'}</ToggleButton>
-      {isOpen && (
-        <>
+    <>
+      <ToggleButton onClick={toggleContainer} />
+      <ModalBackground isOpen={isOpen} onClick={toggleContainer}>
+        <ModalContainer isOpen={isOpen} onClick={(e) => e.stopPropagation()}>
           {error && <ErrorMessage>{error}</ErrorMessage>}
-          <Title>Perguntas Geradas:</Title>
-          <QuestionList>
-            {questions.length > 0 ? (
-              questions.map((question, index) => (
-                <Card key={index}>
-                  <Question>{question.pergunta}</Question>
-                  <AnswerInput
-                    type="text"
-                    value={userAnswers[index] || ''}
-                    onChange={(e) => handleInputChange(index, e.target.value)}
-                  />
-                  <ValidateButton onClick={() => validateAnswer(index, question)}>Validar</ValidateButton>
-                  {validationResults[index] && validationResults[index].isCorrect && (
-                    <div>
-                      <strong>Resposta Correta: </strong>
-                      {userAnswers[index]}
-                    </div>
-                  )}
-                </Card>
-              ))
-            ) : (
-              <p>Nenhuma pergunta gerada ainda.</p>
-            )}
-          </QuestionList>
-        </>
-      )}
-      <ModalBackground isOpen={modalOpen} onClick={closeModal}>
-        <Modal onClick={(e) => e.stopPropagation()}>
-          <ModalTitle>{modalTitle}</ModalTitle>
-          <ModalContent>{modalContent}</ModalContent>
-          <ValidateButton onClick={closeModal}>Fechar</ValidateButton>
-        </Modal>
+          <Title>Pergunta Atual:</Title>
+          {currentQuestion ? (
+            <Card>
+              <Question>{currentQuestion.pergunta}</Question>
+              <AnswerInput
+                type="text"
+                value={userAnswer}
+                onChange={(e) => setUserAnswer(e.target.value)}
+                placeholder="Digite sua resposta..."
+              />
+              <ValidateButton onClick={() => validateAnswer(currentQuestion)}>Validar</ValidateButton>
+            </Card>
+          ) : (
+            <div>Nenhuma pergunta disponível no momento.</div>
+          )}
+        </ModalContainer>
       </ModalBackground>
-    </Container>
+
+      {modalOpen && (
+        <ModalBackground>
+          <Modal>
+            <ModalTitle>{modalTitle}</ModalTitle>
+            <ModalContent>{modalContent}</ModalContent>
+            <button onClick={closeModal}>Fechar</button>
+          </Modal>
+        </ModalBackground>
+      )}
+    </>
   );
 };
 

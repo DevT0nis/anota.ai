@@ -1,0 +1,52 @@
+[
+    {
+        "pergunta": "Qual é a finalidade principal da linguagem HTML?",
+        "resposta_esperada": "A finalidade principal da HTML é estruturar o conteúdo de uma página web, definindo elementos como títulos, parágrafos, imagens e links.",
+        "explicacao": "O texto define HTML como a linguagem padrão para criar páginas web, utilizando uma estrutura de marcação para organizar o conteúdo."
+    },
+    {
+        "pergunta": "Explique a diferença entre as tags <article> e <section> em HTML5.",
+        "resposta_esperada": "A tag <article> representa um conteúdo independente e reutilizável, como um post de blog ou notícia. Já a tag <section> define uma seção temática dentro de um documento, que pode agrupar conteúdos relacionados.",
+        "explicacao": "O trecho sobre semântica em HTML5 menciona ambas as tags, sendo importante diferenciá-las para uso correto."
+    },
+    {
+        "pergunta": "O que são atributos em HTML e cite um exemplo de atributo para a tag <a>?",
+        "resposta_esperada": "Atributos fornecem informações adicionais sobre os elementos HTML. A tag <a>, que define um link, utiliza o atributo 'href' para indicar o endereço de destino.",
+        "explicacao": "O texto explica que atributos adicionam informações aos elementos, e o exemplo da tag <a> com o atributo 'href' ilustra esse conceito."
+    },
+    {
+        "pergunta": "Descreva a função do CSS e como ele se relaciona com o HTML.",
+        "resposta_esperada": "CSS é a linguagem responsável pela formatação visual de páginas web, definindo estilos como cores, fontes e layout. Ele atua em conjunto com o HTML, aplicando estilos aos elementos estruturados pela linguagem de marcação.",
+        "explicacao": "Enquanto o texto define HTML como a estrutura, o CSS é apresentado como responsável pela aparência da página, complementando o HTML."
+    },
+    {
+        "pergunta": "Diferencie os seletores de tipo, classe e ID em CSS.",
+        "resposta_esperada": "Seletores de tipo estilizam elementos pelo nome da tag (ex: 'p' para parágrafos). Seletores de classe estilizam elementos com a classe especificada (ex: '.destaque'). Já os seletores de ID estilizam um único elemento com o ID definido (ex: '#rodape').",
+        "explicacao": "O texto menciona os tipos de seletores, e a pergunta visa explorar a diferença na aplicação de cada um."
+    },
+    {
+        "pergunta": "No contexto do CSS, explique o conceito de 'Box Model'.",
+        "resposta_esperada": "O 'Box Model' define a estrutura visual de um elemento HTML, incluindo margem, borda, padding e o conteúdo em si. É fundamental para controlar o espaçamento e posicionamento dos elementos na página.",
+        "explicacao": "O texto destaca o 'Box Model' como um conceito fundamental, e a pergunta busca a sua definição e importância no CSS."
+    },
+    {
+        "pergunta": "Para que servem as 'media queries' em CSS?",
+        "resposta_esperada": "Media queries permitem aplicar diferentes estilos CSS dependendo do dispositivo de acesso, como tamanho de tela, resolução e orientação. São essenciais para criar sites responsivos, adaptáveis a diferentes dispositivos.",
+        "explicacao": "O texto aborda a importância da responsividade e menciona 'media queries' como uma ferramenta para alcançar esse objetivo."
+    },
+    {
+        "pergunta": "Cite e explique um método para integrar CSS em um documento HTML.",
+        "resposta_esperada": "Um dos métodos é o 'External CSS', que consiste em criar um arquivo separado com a extensão '.css' contendo os estilos CSS e linká-lo ao documento HTML através da tag <link> dentro da seção <head>.",
+        "explicacao": "A pergunta explora os métodos de integração mencionados no texto, buscando a descrição de um deles, como o 'External CSS'."
+    },
+    {
+        "pergunta": "Qual a vantagem de separar o código HTML do código CSS?",
+        "resposta_esperada": "Separar HTML e CSS torna o código mais organizado, reutilizável e fácil de manter. Alterações no estilo (CSS) não afetam a estrutura (HTML) e vice-versa, facilitando a gestão do projeto.",
+        "explicacao": "O texto recomenda a separação como boa prática, e a pergunta busca a justificativa para essa recomendação."
+    },
+    {
+        "pergunta": "Considerando as tags <form>, <input> e <button>, explique a função de cada uma na criação de formulários em HTML.",
+        "resposta_esperada": "A tag <form> define o formulário como um todo. A tag <input> cria campos de entrada de dados, como caixas de texto e botões de rádio. Já a tag <button> cria um botão para enviar os dados do formulário.",
+        "explicacao": "O texto menciona as tags relacionadas a formulários, e a pergunta busca o papel de cada uma na construção desses elementos."
+    }
+]

@@ -41,24 +41,17 @@ Texto corrigido:
 """
 
 TEMPLATE_AGENT_AVALIADOR = """
-Você é um avaliador especialista. Sua tarefa é avaliar a resposta fornecida pelo usuário com base no texto de referência. O texto de referência é: '{texto_referencia}', e a resposta do usuário é: '{resposta_usuario}'.
+Você é um avaliador de respostas. Sua missão é avaliar a resposta fornecida em relação ao texto de referência. 
+Sua resposta deve ser estritamente em formato JSON válido, seguindo o modelo abaixo:
 
-Sua avaliação deve incluir:
+Texto de Referência: "{texto_referencia}"
 
-1. **Nota de Avaliação**: Uma pontuação de 0 a 100% que reflete a precisão da resposta do usuário em relação ao texto de referência.
-2. **Feedback Detalhado**:
-   - **O que o usuário acertou**: Detalhe as partes da resposta do usuário que estão corretas ou parcialmente corretas.
-   - **O que o usuário errou**: Indique os erros ou pontos de falha na resposta do usuário e ofereça correções ou explicações.
+Resposta do Usuário: "{resposta}"
 
-Estruture a avaliação da seguinte maneira:
+Avalie a resposta do usuário fornecendo uma nota de 0 a 100% e um feedback detalhado. A resposta deve ser formatada como JSON, exatamente assim:
 
 {
-    "nota": <percentagem de 0 a 100>,
-    "feedback": {
-        "acertos": "Descrição dos acertos do usuário",
-        "erros": "Descrição dos erros do usuário e correções"
-    }
+    "nota": <nota em percentual, como um número inteiro>,
+    "feedback": "<feedback detalhado, sem quebras de linha>"
 }
-
-Certifique-se de que a nota e o feedback sejam precisos e baseados na correspondência entre a resposta do usuário e o texto de referência.
 """

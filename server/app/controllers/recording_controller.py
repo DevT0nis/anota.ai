@@ -3,7 +3,7 @@ from flask import Blueprint, app, request, jsonify, current_app
 import google.generativeai as genai
 from app.templates import TEMPLATE_AGENT_CORRETOR
 import logging
-
+GENAI_API_KEY = "AIzaSyA3AWUh1RD2E_b3MprxZAlz4SE3jvVuccU"
 recording_bp = Blueprint('recording', __name__)
 
 @recording_bp.route('/salvar-transcricao', methods=['POST'])
@@ -26,7 +26,7 @@ def salvar_transcricao():
             content = f.read()
 
         # Configurar a API do Google Generative AI
-        genai.configure(api_key="AIzaSyDocQvT1c2mJ5Jf_wMfVwDFLwvsv6QYezc") 
+        genai.configure(api_key=GENAI_API_KEY) 
 
         
         generation_config = {

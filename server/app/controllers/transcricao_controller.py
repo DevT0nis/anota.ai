@@ -12,6 +12,7 @@ import google.generativeai as genai
 
 # Configurando o Blueprint
 transcricao_bp = Blueprint('transcricao_bp', __name__)
+GENAI_API_KEY = "AIzaSyA3AWUh1RD2E_b3MprxZAlz4SE3jvVuccU"
 
 # Configurar logging detalhado
 logging.basicConfig(level=logging.INFO)
@@ -150,7 +151,7 @@ def gerar_perguntas(filename):
 
 
         # Configuração da API
-        genai.configure(api_key="AIzaSyDocQvT1c2mJ5Jf_wMfVwDFLwvsv6QYezc") 
+        genai.configure(api_key=GENAI_API_KEY) 
 
         generation_config = {
             "temperature": 1,
@@ -202,20 +203,28 @@ def gerar_perguntas(filename):
         logging.error(f"Erro ao gerar perguntas: {e}")
         return jsonify({"erro": str(e)}), 500
     
+
+
+def limpar_resposta_json(resposta_texto):
+    resposta_texto = resposta_texto.strip()
+    if resposta_texto.startswith('{') and resposta_texto.endswith('}'):
+        return resposta_texto
+    raise ValueError("O texto da resposta não está no formato JSON esperado.")
+
+    
 @transcricao_bp.route('/avaliar-resposta', methods=['POST'])
 def avaliar_resposta():
     try:
-       try:
         data = request.json
         resposta_usuario = data.get('resposta')
         texto_referencia = data.get('texto_referencia')
 
-        if not texto_referencia:
-            raise ValueError("'texto_referencia' está faltando")
+        if not resposta_usuario or not texto_referencia:
+            raise ValueError("'resposta' ou 'texto_referencia' estão faltando")
+        
 
-  
         # Configuração da API
-        genai.configure(api_key="AIzaSyDocQvT1c2mJ5Jf_wMfVwDFLwvsv6QYezc")
+        genai.configure(api_key=GENAI_API_KEY)
 
         evaluation_config = {
             "temperature": 0.7,
@@ -230,54 +239,45 @@ def avaliar_resposta():
             generation_config=evaluation_config,
         )
 
-        prompt = TEMPLATE_AGENT_AVALIADOR.format(resposta=resposta_usuario)
+        prompt = TEMPLATE_AGENT_AVALIADOR.format(resposta=resposta_usuario, texto_referencia=texto_referencia)
         logging.debug(f"Prompt enviado para o modelo: {prompt}")
 
         chat_session = model.start_chat(history=[])
         response = chat_session.send_message(prompt)
 
-        logging.debug(f"Resposta do modelo: {response}")
+        raw_content = response.candidates[0].content.strip()
+        logging.debug(f"Resposta bruta do modelo: {raw_content}")
 
-        if not response.candidates or not response.candidates[0].content:
+        if not raw_content:
             logging.error("Resposta do modelo está vazia ou malformada.")
             return jsonify({"erro": "Resposta do modelo está vazia ou malformada."}), 500
 
         try:
-            avaliacao = json.loads(response.candidates[0].content)
-            if 'texto_referencia' not in avaliacao:
-                logging.error("Chave 'texto_referencia' ausente na resposta do modelo.")
-                return jsonify({"erro": "Chave 'texto_referencia' ausente na resposta do modelo."}), 500
+            # Tentando decodificar o JSON da resposta
+            resposta_texto = limpar_resposta_json(raw_content)
+            avaliacao = json.loads(resposta_texto)
+
+            nota = avaliacao.get('nota')
+            feedback = avaliacao.get('feedback', "Nenhum feedback disponível")
+
+            if nota is None or feedback is None:
+                logging.error("Avaliador não retornou nota ou feedback adequados")
+                return jsonify({"erro": "Avaliador não retornou nota ou feedback adequados"}), 500
+
+            logging.info(f"Nota: {nota}%, Feedback: {feedback}")
+
+            return jsonify({
+                "nota": nota,
+                "feedback": feedback
+            }), 200
+
         except json.JSONDecodeError as e:
             logging.error(f"Erro ao decodificar JSON: {e}")
             return jsonify({"erro": "Erro ao processar a resposta do modelo."}), 500
 
-        nota = avaliacao.get('nota', 0)
-        feedback = avaliacao.get('feedback', "Nenhum feedback disponível")
-
-        if nota is None or feedback is None:
-            logging.error("Avaliador não retornou nota ou feedback adequados")
-            return jsonify({"erro": "Avaliador não retornou nota ou feedback adequados"}), 500
-
-        logging.info(f"Nota: {nota}%, Feedback: {feedback}")
-        
-         nota = calcular_nota(resposta_usuario, texto_referencia)
-        feedback = gerar_feedback(resposta_usuario, texto_referencia)
-
-        return jsonify({'nota': nota, 'feedback': feedback})
-
-        return jsonify({
-            "nota": nota,
-            "feedback": feedback
-        }), 200
-
     except Exception as e:
         logging.error(f"Erro ao avaliar resposta: {e}")
         return jsonify({"erro": str(e)}), 500
-
-
-
-
-
 
 @transcricao_bp.route('/listar-perguntas', methods=['GET'])
 def listar_perguntas():

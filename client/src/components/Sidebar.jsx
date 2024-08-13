@@ -163,7 +163,7 @@ const Sidebar = () => {
     <Container isOpen={isOpen}>
       <Header>
         <Link to="/">
-          <Logo src="./public/Designer (7).png" alt="Logo" isOpen={isOpen} />
+          <Logo src="../Designer (10).png" alt="Logo" isOpen={isOpen} />
         </Link>
         <ToggleButton onClick={toggleContainer} isOpen={isOpen}>
           {isOpen ? <FaTimes /> : <FaBars />}
@@ -180,6 +180,12 @@ const Sidebar = () => {
           <NavButton to="/saved-notes" isOpen={isOpen}>
             <FaBookmark />
             Anotações Salvas
+          </NavButton>
+        </NavItem>
+        <NavItem isOpen={isOpen}>
+          <NavButton to="/toninho" isOpen={isOpen}>
+            <FaBookmark />
+            Toninho
           </NavButton>
         </NavItem>
    
