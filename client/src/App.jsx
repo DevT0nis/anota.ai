@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 
 import NoteSaved from './pages/AnotacoesSalvas';
+import Aws from './pages/Aws';
 
 
 const Container = styled.div`
@@ -34,6 +35,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/saved-notes" element={<NoteSaved/>}/>
+            <Route path="/aws" element={<Aws/>}/>
           </Routes>
         </MainContent>
       </Container>

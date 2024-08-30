@@ -183,9 +183,9 @@ const Sidebar = () => {
           </NavButton>
         </NavItem>
         <NavItem isOpen={isOpen}>
-          <NavButton to="/toninho" isOpen={isOpen}>
+          <NavButton to="/aws" isOpen={isOpen}>
             <FaBookmark />
-            Toninho
+            AWS
           </NavButton>
         </NavItem>
    

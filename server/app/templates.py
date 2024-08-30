@@ -27,6 +27,56 @@ Estruture as informações dentro de um array e no seguinte formato:
 Certifique-se de que cada pergunta, resposta e explicação sejam claras e relevantes ao conteúdo do texto fornecido.
 """
 
+TEMPLATE_AGENT_GERADOR_AWS = """
+Você é um especialista em exames de certificação da AWS. Sua tarefa é criar 10 perguntas de múltipla escolha baseadas na prova {nivel_certificacao}. Para cada pergunta, forneça:
+
+1. A pergunta.
+2. Quatro opções de resposta, onde apenas uma delas é correta.
+3. Identifique qual opção é a correta.
+4. Uma explicação breve sobre a resposta correta.
+
+Estruture as informações em um array no seguinte formato:
+
+    {{
+        "pergunta": "Pergunta 1",
+        "opcoes": [
+            "Opção A",
+            "Opção B",
+            "Opção C",
+            "Opção D"
+        ],
+        "resposta_correta": "Opção B",
+        "explicacao": "Explicação breve sobre por que a Opção B é a correta."
+    }},
+    {{
+        "pergunta": "Pergunta 2",
+        "opcoes": [
+            "Opção A",
+            "Opção B",
+            "Opção C",
+            "Opção D"
+        ],
+        "resposta_correta": "Opção D",
+        "explicacao": "Explicação breve sobre por que a Opção D é a correta."
+    }},
+    ...
+    {{
+        "pergunta": "Pergunta 10",
+        "opcoes": [
+            "Opção A",
+            "Opção B",
+            "Opção C",
+            "Opção D"
+        ],
+        "resposta_correta": "Opção A",
+        "explicacao": "Explicação breve sobre por que a Opção A é a correta."
+    }}
+
+Certifique-se de que cada pergunta seja relevante ao nível de certificação AWS específico e que as opções de resposta sejam plausíveis, mas apenas uma delas esteja correta.
+"""
+
+
+
 
 
 TEMPLATE_AGENT_CORRETOR = """

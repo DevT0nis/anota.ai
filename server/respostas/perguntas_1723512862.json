@@ -1,52 +1,715 @@
 [
     {
-        "pergunta": "Qual é a finalidade principal da linguagem HTML?",
-        "resposta_esperada": "A finalidade principal da HTML é estruturar o conteúdo de uma página web, definindo elementos como títulos, parágrafos, imagens e links.",
-        "explicacao": "O texto define HTML como a linguagem padrão para criar páginas web, utilizando uma estrutura de marcação para organizar o conteúdo."
+        "pergunta": "1. Qual dos seguintes serviços da AWS é uma plataforma de computação que permite executar código sem provisionar ou gerenciar servidores?",
+        "opcoes": [
+            "Amazon EC2",
+            "AWS Lambda",
+            "Amazon S3",
+            "Amazon RDS"
+        ],
+        "resposta_correta": "AWS Lambda",
+        "explicacao": "AWS Lambda é uma plataforma serverless que permite executar código em resposta a eventos sem gerenciar servidores."
     },
     {
-        "pergunta": "Explique a diferença entre as tags <article> e <section> em HTML5.",
-        "resposta_esperada": "A tag <article> representa um conteúdo independente e reutilizável, como um post de blog ou notícia. Já a tag <section> define uma seção temática dentro de um documento, que pode agrupar conteúdos relacionados.",
-        "explicacao": "O trecho sobre semântica em HTML5 menciona ambas as tags, sendo importante diferenciá-las para uso correto."
+        "pergunta": "2. Qual serviço da AWS é adequado para armazenar objetos, como backups e dados não estruturados?",
+        "opcoes": [
+            "Amazon DynamoDB",
+            "Amazon S3",
+            "Amazon RDS",
+            "AWS Lambda"
+        ],
+        "resposta_correta": "Amazon S3",
+        "explicacao": "Amazon S3 é uma solução de armazenamento de objetos escalável e durável, ideal para armazenar backups, arquivos de mídia e grandes volumes de dados não estruturados."
     },
     {
-        "pergunta": "O que são atributos em HTML e cite um exemplo de atributo para a tag <a>?",
-        "resposta_esperada": "Atributos fornecem informações adicionais sobre os elementos HTML. A tag <a>, que define um link, utiliza o atributo 'href' para indicar o endereço de destino.",
-        "explicacao": "O texto explica que atributos adicionam informações aos elementos, e o exemplo da tag <a> com o atributo 'href' ilustra esse conceito."
+        "pergunta": "3. Qual dos seguintes é um exemplo de um serviço de banco de dados gerenciado?",
+        "opcoes": [
+            "Amazon EC2",
+            "Amazon S3",
+            "Amazon RDS",
+            "AWS Lambda"
+        ],
+        "resposta_correta": "Amazon RDS",
+        "explicacao": "Amazon RDS é um serviço de banco de dados gerenciado que facilita a configuração, operação e escalabilidade de bancos de dados relacionais na nuvem."
     },
     {
-        "pergunta": "Descreva a função do CSS e como ele se relaciona com o HTML.",
-        "resposta_esperada": "CSS é a linguagem responsável pela formatação visual de páginas web, definindo estilos como cores, fontes e layout. Ele atua em conjunto com o HTML, aplicando estilos aos elementos estruturados pela linguagem de marcação.",
-        "explicacao": "Enquanto o texto define HTML como a estrutura, o CSS é apresentado como responsável pela aparência da página, complementando o HTML."
+        "pergunta": "4. Qual é o principal benefício de usar uma arquitetura de microserviços?",
+        "opcoes": [
+            "Custos mais altos",
+            "Maior dependência entre serviços",
+            "Escalabilidade independente",
+            "Necessidade de menos recursos"
+        ],
+        "resposta_correta": "Escalabilidade independente",
+        "explicacao": "Arquiteturas de microserviços permitem que diferentes partes de uma aplicação sejam escaladas independentemente, aumentando a flexibilidade e eficiência."
     },
     {
-        "pergunta": "Diferencie os seletores de tipo, classe e ID em CSS.",
-        "resposta_esperada": "Seletores de tipo estilizam elementos pelo nome da tag (ex: 'p' para parágrafos). Seletores de classe estilizam elementos com a classe especificada (ex: '.destaque'). Já os seletores de ID estilizam um único elemento com o ID definido (ex: '#rodape').",
-        "explicacao": "O texto menciona os tipos de seletores, e a pergunta visa explorar a diferença na aplicação de cada um."
+        "pergunta": "5. Qual dos seguintes é um princípio fundamental do AWS Well-Architected Framework?",
+        "opcoes": [
+            "Escolher serviços gerenciados sempre que possível",
+            "Executar tudo em EC2",
+            "Evitar a automação",
+            "Usar uma única região da AWS"
+        ],
+        "resposta_correta": "Escolher serviços gerenciados sempre que possível",
+        "explicacao": "O AWS Well-Architected Framework sugere o uso de serviços gerenciados sempre que possível para reduzir a sobrecarga operacional."
     },
     {
-        "pergunta": "No contexto do CSS, explique o conceito de 'Box Model'.",
-        "resposta_esperada": "O 'Box Model' define a estrutura visual de um elemento HTML, incluindo margem, borda, padding e o conteúdo em si. É fundamental para controlar o espaçamento e posicionamento dos elementos na página.",
-        "explicacao": "O texto destaca o 'Box Model' como um conceito fundamental, e a pergunta busca a sua definição e importância no CSS."
+        "pergunta": "6. Qual serviço da AWS pode ser usado para hospedar contêineres?",
+        "opcoes": [
+            "Amazon EC2",
+            "Amazon S3",
+            "AWS Fargate",
+            "Amazon RDS"
+        ],
+        "resposta_correta": "AWS Fargate",
+        "explicacao": "AWS Fargate é uma tecnologia serverless que permite que você execute contêineres sem precisar gerenciar servidores ou clusters."
     },
     {
-        "pergunta": "Para que servem as 'media queries' em CSS?",
-        "resposta_esperada": "Media queries permitem aplicar diferentes estilos CSS dependendo do dispositivo de acesso, como tamanho de tela, resolução e orientação. São essenciais para criar sites responsivos, adaptáveis a diferentes dispositivos.",
-        "explicacao": "O texto aborda a importância da responsividade e menciona 'media queries' como uma ferramenta para alcançar esse objetivo."
+        "pergunta": "7. Qual é a principal vantagem do modelo de preços pay-as-you-go da AWS?",
+        "opcoes": [
+            "Pagamentos antecipados para descontos",
+            "Pagamentos com base na previsão de uso",
+            "Pagar apenas pelos recursos consumidos",
+            "Preços fixos por mês"
+        ],
+        "resposta_correta": "Pagar apenas pelos recursos consumidos",
+        "explicacao": "O modelo pay-as-you-go da AWS permite que você pague apenas pelos recursos que você realmente consome, otimizando custos."
     },
     {
-        "pergunta": "Cite e explique um método para integrar CSS em um documento HTML.",
-        "resposta_esperada": "Um dos métodos é o 'External CSS', que consiste em criar um arquivo separado com a extensão '.css' contendo os estilos CSS e linká-lo ao documento HTML através da tag <link> dentro da seção <head>.",
-        "explicacao": "A pergunta explora os métodos de integração mencionados no texto, buscando a descrição de um deles, como o 'External CSS'."
+        "pergunta": "8. Qual serviço da AWS permite distribuir conteúdo com baixa latência em todo o mundo?",
+        "opcoes": [
+            "Amazon Route 53",
+            "Amazon CloudFront",
+            "AWS Direct Connect",
+            "AWS Elastic Beanstalk"
+        ],
+        "resposta_correta": "Amazon CloudFront",
+        "explicacao": "Amazon CloudFront é uma CDN que distribui conteúdo globalmente, proporcionando baixa latência e alta velocidade."
     },
     {
-        "pergunta": "Qual a vantagem de separar o código HTML do código CSS?",
-        "resposta_esperada": "Separar HTML e CSS torna o código mais organizado, reutilizável e fácil de manter. Alterações no estilo (CSS) não afetam a estrutura (HTML) e vice-versa, facilitando a gestão do projeto.",
-        "explicacao": "O texto recomenda a separação como boa prática, e a pergunta busca a justificativa para essa recomendação."
+        "pergunta": "9. Qual é o principal benefício de usar uma VPC (Virtual Private Cloud) na AWS?",
+        "opcoes": [
+            "Facilidade de acesso público",
+            "Isolamento de rede",
+            "Custos reduzidos",
+            "Maior latência"
+        ],
+        "resposta_correta": "Isolamento de rede",
+        "explicacao": "Uma VPC proporciona isolamento de rede, permitindo que você controle o tráfego de entrada e saída, além de segmentar sub-redes."
     },
     {
-        "pergunta": "Considerando as tags <form>, <input> e <button>, explique a função de cada uma na criação de formulários em HTML.",
-        "resposta_esperada": "A tag <form> define o formulário como um todo. A tag <input> cria campos de entrada de dados, como caixas de texto e botões de rádio. Já a tag <button> cria um botão para enviar os dados do formulário.",
-        "explicacao": "O texto menciona as tags relacionadas a formulários, e a pergunta busca o papel de cada uma na construção desses elementos."
-    }
+        "pergunta": "10. Qual serviço da AWS fornece insights sobre as atividades e solicitações de API feitas em sua conta?",
+        "opcoes": [
+            "Amazon CloudWatch",
+            "AWS CloudTrail",
+            "Amazon GuardDuty",
+            "AWS Inspector"
+        ],
+        "resposta_correta": "AWS CloudTrail",
+        "explicacao": "O AWS CloudTrail registra e monitora a atividade das APIs em sua conta, proporcionando auditoria e segurança."
+    },
+    {
+        "pergunta": "11. Qual serviço da AWS é recomendado para executar contêineres Docker com orquestração automática?",
+        "opcoes": [
+            "Amazon ECS",
+            "Amazon RDS",
+            "Amazon CloudFront",
+            "AWS Direct Connect"
+        ],
+        "resposta_correta": "Amazon ECS",
+        "explicacao": "Amazon ECS (Elastic Container Service) é um serviço gerenciado de orquestração de contêineres que suporta a execução de contêineres Docker na AWS."
+    },
+    {
+        "pergunta": "12. Qual recurso da AWS é utilizado para definir permissões granulares e controlar o acesso a recursos da nuvem?",
+        "opcoes": [
+            "Amazon S3",
+            "AWS IAM",
+            "Amazon VPC",
+            "AWS CloudFormation"
+        ],
+        "resposta_correta": "AWS IAM",
+        "explicacao": "AWS IAM (Identity and Access Management) permite definir e gerenciar permissões granulares para controlar o acesso a recursos da AWS."
+    },
+    {
+        "pergunta": "13. Qual das opções a seguir descreve corretamente o AWS Availability Zone?",
+        "opcoes": [
+            "Uma única instância do EC2",
+            "Um data center isolado dentro de uma região",
+            "Um serviço de banco de dados relacional",
+            "Uma solução de backup e recuperação de dados"
+        ],
+        "resposta_correta": "Um data center isolado dentro de uma região",
+        "explicacao": "Uma AWS Availability Zone é um data center fisicamente isolado em uma região, projetado para ser resiliente a falhas."
+    },
+    {
+        "pergunta": "14. Qual serviço da AWS permite executar consultas SQL em grandes volumes de dados armazenados no S3?",
+        "opcoes": [
+            "Amazon RDS",
+            "Amazon Athena",
+            "AWS Glue",
+            "AWS DMS"
+        ],
+        "resposta_correta": "Amazon Athena",
+        "explicacao": "Amazon Athena é um serviço que permite executar consultas SQL diretamente em dados armazenados no Amazon S3 sem a necessidade de infraestrutura."
+    },
+    {
+        "pergunta": "15. Qual das opções a seguir é um exemplo de serviço de machine learning gerenciado pela AWS?",
+        "opcoes": [
+            "Amazon Polly",
+            "Amazon EC2",
+            "Amazon S3",
+            "AWS Lambda"
+        ],
+        "resposta_correta": "Amazon Polly",
+        "explicacao": "Amazon Polly é um serviço gerenciado de machine learning que transforma texto em fala realista."
+    },{
+    "pergunta": "16. Qual serviço da AWS permite mover grandes quantidades de dados fisicamente para a nuvem AWS?",
+    "opcoes": [
+        "AWS Snowball",
+        "AWS Direct Connect",
+        "Amazon RDS",
+        "Amazon S3 Transfer Acceleration"
+    ],
+    "resposta_correta": "AWS Snowball",
+    "explicacao": "AWS Snowball é um serviço que utiliza dispositivos físicos para transferir grandes quantidades de dados para a AWS de maneira segura e eficiente."
+},
+{
+    "pergunta": "17. Qual serviço da AWS oferece monitoramento de performance de recursos e aplicativos em tempo real?",
+    "opcoes": [
+        "Amazon CloudWatch",
+        "AWS Config",
+        "AWS Trusted Advisor",
+        "AWS CloudTrail"
+    ],
+    "resposta_correta": "Amazon CloudWatch",
+    "explicacao": "Amazon CloudWatch é um serviço de monitoramento que coleta e rastreia métricas, coleta e monitora arquivos de log, e define alarmes."
+},
+{
+    "pergunta": "18. Qual é a principal função do AWS Route 53?",
+    "opcoes": [
+        "Gerenciamento de identidades e acessos",
+        "Distribuição de conteúdo globalmente",
+        "Serviço de DNS gerenciado",
+        "Armazenamento de objetos"
+    ],
+    "resposta_correta": "Serviço de DNS gerenciado",
+    "explicacao": "O AWS Route 53 é um serviço DNS gerenciado que ajuda a roteamento de tráfego na internet de maneira rápida e confiável."
+},
+{
+    "pergunta": "19. Qual das opções abaixo representa uma prática de segurança recomendada na AWS?",
+    "opcoes": [
+        "Usar chaves de acesso diretamente no código",
+        "Armazenar dados sensíveis sem criptografia",
+        "Configurar o AWS IAM para o princípio de privilégio mínimo",
+        "Compartilhar credenciais de acesso entre equipes"
+    ],
+    "resposta_correta": "Configurar o AWS IAM para o princípio de privilégio mínimo",
+    "explicacao": "O princípio do privilégio mínimo assegura que usuários e serviços tenham apenas as permissões necessárias para executar suas funções, reduzindo riscos de segurança."
+},
+{
+    "pergunta": "20. Qual serviço da AWS permite a criação, implementação e escalabilidade de aplicativos web com gerenciamento automático de recursos?",
+    "opcoes": [
+        "AWS Elastic Beanstalk",
+        "Amazon CloudFront",
+        "AWS Lambda",
+        "Amazon DynamoDB"
+    ],
+    "resposta_correta": "AWS Elastic Beanstalk",
+    "explicacao": "O AWS Elastic Beanstalk simplifica o processo de implantação e gerenciamento de aplicativos na nuvem, oferecendo um serviço gerenciado que cuida da infraestrutura."
+},
+{
+    "pergunta": "21. Qual serviço da AWS é utilizado para provisionar instâncias de EC2 com tarifas mais baixas, ideal para workloads que podem ser interrompidos?",
+    "opcoes": [
+        "Amazon EC2 On-Demand",
+        "Amazon EC2 Spot",
+        "Amazon EC2 Reserved",
+        "Amazon Lightsail"
+    ],
+    "resposta_correta": "Amazon EC2 Spot",
+    "explicacao": "Instâncias Amazon EC2 Spot oferecem capacidade de computação não utilizada da AWS com grandes descontos, ideal para workloads que toleram interrupções."
+},
+{
+    "pergunta": "22. Qual serviço da AWS permite criar redes privadas e gerenciar sub-redes e gateways?",
+    "opcoes": [
+        "AWS Direct Connect",
+        "AWS VPC",
+        "Amazon CloudFront",
+        "AWS Lambda"
+    ],
+    "resposta_correta": "AWS VPC",
+    "explicacao": "AWS VPC permite que você crie redes virtuais isoladas logicamente na nuvem AWS e gerencie sub-redes, roteamento, e gateways de internet."
+},
+{
+    "pergunta": "23. Qual das opções abaixo é uma solução de banco de dados NoSQL totalmente gerenciada pela AWS?",
+    "opcoes": [
+        "Amazon RDS",
+        "Amazon Aurora",
+        "Amazon DynamoDB",
+        "Amazon Redshift"
+    ],
+    "resposta_correta": "Amazon DynamoDB",
+    "explicacao": "Amazon DynamoDB é um banco de dados NoSQL totalmente gerenciado, projetado para performance de baixa latência e alta escalabilidade."
+},
+{
+    "pergunta": "24. O que é Amazon CloudFormation?",
+    "opcoes": [
+        "Um serviço de provisionamento de infraestrutura como código",
+        "Uma solução de monitoramento de métricas",
+        "Um serviço de entrega de conteúdo",
+        "Uma ferramenta de segurança de rede"
+    ],
+    "resposta_correta": "Um serviço de provisionamento de infraestrutura como código",
+    "explicacao": "Amazon CloudFormation permite a criação de templates que definem a infraestrutura como código, facilitando a automação e consistência no provisionamento de recursos."
+},
+{
+    "pergunta": "25. Qual ferramenta da AWS oferece recomendações de segurança, performance e otimização de custos?",
+    "opcoes": [
+        "AWS Trusted Advisor",
+        "AWS CloudTrail",
+        "AWS Shield",
+        "AWS Inspector"
+    ],
+    "resposta_correta": "AWS Trusted Advisor",
+    "explicacao": "AWS Trusted Advisor é uma ferramenta que fornece recomendações em cinco categorias: custo, performance, segurança, tolerância a falhas e limites de serviço."
+},
+{
+    "pergunta": "26. Qual recurso permite uma resposta automática a eventos no AWS CloudWatch, como executar uma função Lambda?",
+    "opcoes": [
+        "CloudWatch Alarms",
+        "CloudWatch Logs",
+        "CloudWatch Metrics",
+        "CloudWatch Events"
+    ],
+    "resposta_correta": "CloudWatch Events",
+    "explicacao": "CloudWatch Events permite configurar respostas automáticas a eventos em sua infraestrutura, como a execução de uma função Lambda."
+},
+{
+    "pergunta": "27. Qual das seguintes é uma responsabilidade compartilhada do cliente no modelo de responsabilidade compartilhada da AWS?",
+    "opcoes": [
+        "Gerenciamento da segurança física dos data centers",
+        "Gerenciamento do sistema operacional e patches",
+        "Segurança do hardware subjacente",
+        "Manutenção da infraestrutura de rede"
+    ],
+    "resposta_correta": "Gerenciamento do sistema operacional e patches",
+    "explicacao": "No modelo de responsabilidade compartilhada, a AWS é responsável pela segurança da nuvem, enquanto os clientes são responsáveis pela segurança do que colocam na nuvem."
+},
+{
+    "pergunta": "28. Qual dos seguintes serviços oferece uma infraestrutura de data warehouse totalmente gerenciada?",
+    "opcoes": [
+        "Amazon RDS",
+        "Amazon Redshift",
+        "AWS Glue",
+        "Amazon Elasticsearch Service"
+    ],
+    "resposta_correta": "Amazon Redshift",
+    "explicacao": "Amazon Redshift é um data warehouse totalmente gerenciado que permite executar análises em petabytes de dados de maneira eficiente."
+},
+{
+    "pergunta": "29. O que é o Amazon S3 Glacier?",
+    "opcoes": [
+        "Um serviço de backup de EC2",
+        "Uma solução de arquivamento de dados de baixo custo",
+        "Uma plataforma de machine learning",
+        "Uma ferramenta de gerenciamento de containers"
+    ],
+    "resposta_correta": "Uma solução de arquivamento de dados de baixo custo",
+    "explicacao": "Amazon S3 Glacier é um serviço de arquivamento de dados com custo reduzido, ideal para armazenar dados que não precisam de acesso frequente."
+},
+{
+    "pergunta": "30. Qual ferramenta da AWS facilita a migração de bancos de dados para a nuvem?",
+    "opcoes": [
+        "AWS Snowball",
+        "AWS Database Migration Service (DMS)",
+        "Amazon S3 Transfer Acceleration",
+        "AWS Storage Gateway"
+    ],
+    "resposta_correta": "AWS Database Migration Service (DMS)",
+    "explicacao": "O AWS DMS (Database Migration Service) é uma ferramenta que facilita a migração de bancos de dados para a AWS de forma segura e mínima interrupção."
+},{
+    "pergunta": "31. Qual das seguintes opções oferece proteção distribuída contra ataques DDoS na AWS?",
+    "opcoes": [
+        "AWS Shield",
+        "AWS CloudTrail",
+        "Amazon GuardDuty",
+        "AWS WAF"
+    ],
+    "resposta_correta": "AWS Shield",
+    "explicacao": "AWS Shield é um serviço gerenciado que protege contra ataques distribuídos de negação de serviço (DDoS)."
+},
+{
+    "pergunta": "32. Qual serviço da AWS permite o envio de mensagens entre sistemas distribuídos com alta disponibilidade?",
+    "opcoes": [
+        "AWS Lambda",
+        "Amazon SQS",
+        "Amazon RDS",
+        "Amazon SNS"
+    ],
+    "resposta_correta": "Amazon SQS",
+    "explicacao": "Amazon SQS (Simple Queue Service) é um serviço de fila que permite enviar, armazenar e receber mensagens entre componentes distribuídos."
+},
+{
+    "pergunta": "33. Qual serviço da AWS ajuda a identificar dados sensíveis, como informações de identificação pessoal (PII), em seus dados armazenados no S3?",
+    "opcoes": [
+        "AWS Shield",
+        "AWS Macie",
+        "Amazon GuardDuty",
+        "AWS Config"
+    ],
+    "resposta_correta": "AWS Macie",
+    "explicacao": "AWS Macie usa machine learning para identificar automaticamente dados sensíveis, como PII, em seus dados armazenados no S3."
+},
+{
+    "pergunta": "34. Qual serviço da AWS permite rastrear alterações na configuração dos recursos da AWS ao longo do tempo?",
+    "opcoes": [
+        "Amazon CloudFront",
+        "AWS Config",
+        "Amazon CloudWatch",
+        "AWS CodePipeline"
+    ],
+    "resposta_correta": "AWS Config",
+    "explicacao": "AWS Config rastreia mudanças na configuração dos recursos da AWS, fornecendo uma visão histórica de suas alterações."
+},
+{
+    "pergunta": "35. Qual serviço da AWS é usado para gerenciar versões de código-fonte e colaborar em projetos de software?",
+    "opcoes": [
+        "AWS CodeCommit",
+        "AWS CodeDeploy",
+        "AWS CodeBuild",
+        "AWS CodePipeline"
+    ],
+    "resposta_correta": "AWS CodeCommit",
+    "explicacao": "AWS CodeCommit é um serviço de controle de versão gerenciado que facilita a colaboração no código-fonte."
+},
+{
+    "pergunta": "36. Qual dos seguintes é um exemplo de serviço de armazenamento de bloco da AWS?",
+    "opcoes": [
+        "Amazon S3",
+        "Amazon EBS",
+        "Amazon Glacier",
+        "Amazon DynamoDB"
+    ],
+    "resposta_correta": "Amazon EBS",
+    "explicacao": "Amazon EBS (Elastic Block Store) fornece armazenamento de bloco persistente para instâncias EC2, permitindo a criação de volumes duráveis e altamente disponíveis."
+},
+{
+    "pergunta": "37. Qual serviço da AWS pode ser usado para gerenciar o acesso a aplicações móveis e web com autenticação e autorização?",
+    "opcoes": [
+        "Amazon Cognito",
+        "Amazon RDS",
+        "Amazon SNS",
+        "Amazon CloudFront"
+    ],
+    "resposta_correta": "Amazon Cognito",
+    "explicacao": "Amazon Cognito fornece serviços de autenticação, autorização e gerenciamento de usuários para aplicações móveis e web."
+},
+{
+    "pergunta": "38. Qual ferramenta da AWS permite implantar infraestrutura em várias regiões usando scripts de infraestrutura como código?",
+    "opcoes": [
+        "AWS CodePipeline",
+        "AWS CloudFormation",
+        "AWS Elastic Beanstalk",
+        "AWS OpsWorks"
+    ],
+    "resposta_correta": "AWS CloudFormation",
+    "explicacao": "AWS CloudFormation permite provisionar recursos de forma consistente em múltiplas regiões, utilizando infraestrutura como código por meio de templates."
+},
+{
+    "pergunta": "39. Qual serviço da AWS é usado para criar pipelines de integração contínua e entrega contínua (CI/CD)?",
+    "opcoes": [
+        "AWS CodeBuild",
+        "AWS CodePipeline",
+        "AWS CodeDeploy",
+        "AWS CloudFormation"
+    ],
+    "resposta_correta": "AWS CodePipeline",
+    "explicacao": "AWS CodePipeline é um serviço de entrega contínua que automatiza o processo de criação, teste e implantação de seu código."
+},
+{
+    "pergunta": "40. Qual das opções abaixo descreve o Amazon RDS Multi-AZ?",
+    "opcoes": [
+        "Apenas um banco de dados de leitura",
+        "Alta disponibilidade com réplica automática em outra zona de disponibilidade",
+        "Backups automáticos a cada hora",
+        "Escalabilidade horizontal de instâncias"
+    ],
+    "resposta_correta": "Alta disponibilidade com réplica automática em outra zona de disponibilidade",
+    "explicacao": "Amazon RDS Multi-AZ oferece alta disponibilidade ao replicar automaticamente os dados para outra zona de disponibilidade para failover automático."
+},
+{
+    "pergunta": "41. Qual serviço da AWS permite executar queries SQL em grandes conjuntos de dados armazenados no S3 usando a arquitetura serverless?",
+    "opcoes": [
+        "AWS Glue",
+        "Amazon Redshift",
+        "Amazon Athena",
+        "Amazon Aurora"
+    ],
+    "resposta_correta": "Amazon Athena",
+    "explicacao": "Amazon Athena é um serviço de consulta serverless que permite executar queries SQL diretamente nos dados armazenados no Amazon S3."
+},
+{
+    "pergunta": "42. Qual serviço da AWS facilita a implementação de uma aplicação containerizada com Kubernetes?",
+    "opcoes": [
+        "AWS Elastic Beanstalk",
+        "Amazon EKS",
+        "AWS Fargate",
+        "Amazon ECS"
+    ],
+    "resposta_correta": "Amazon EKS",
+    "explicacao": "Amazon EKS é um serviço gerenciado que facilita a execução de Kubernetes na AWS para orquestração de contêineres."
+},
+{
+    "pergunta": "43. Qual ferramenta da AWS oferece detecção inteligente de ameaças e monitoramento contínuo para proteger sua conta AWS?",
+    "opcoes": [
+        "Amazon Macie",
+        "Amazon GuardDuty",
+        "AWS Shield",
+        "AWS WAF"
+    ],
+    "resposta_correta": "Amazon GuardDuty",
+    "explicacao": "Amazon GuardDuty é um serviço que oferece detecção de ameaças e monitoramento contínuo para proteger suas contas e cargas de trabalho na AWS."
+},
+{
+    "pergunta": "44. Qual serviço da AWS oferece uma plataforma de análises de big data escalável com base em Hadoop e Spark?",
+    "opcoes": [
+        "Amazon Redshift",
+        "Amazon EMR",
+        "AWS Glue",
+        "Amazon Kinesis"
+    ],
+    "resposta_correta": "Amazon EMR",
+    "explicacao": "Amazon EMR (Elastic MapReduce) oferece uma plataforma escalável para análises de big data, permitindo o uso de Hadoop, Spark e outras ferramentas."
+},
+{
+    "pergunta": "45. Qual das opções abaixo é uma prática recomendada ao projetar soluções na nuvem AWS?",
+    "opcoes": [
+        "Gerenciar backups manualmente",
+        "Implementar segurança em várias camadas",
+        "Evitar automação sempre que possível",
+        "Atribuir todas as permissões a cada usuário"
+    ],
+    "resposta_correta": "Implementar segurança em várias camadas",
+    "explicacao": "Segurança em várias camadas (defesa em profundidade) é uma prática recomendada que protege sua infraestrutura com múltiplos níveis de segurança."
+},
+{
+    "pergunta": "46. Qual serviço da AWS é usado para criar e gerenciar clusters de data warehouse em escala de petabytes?",
+    "opcoes": [
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Aurora",
+        "Amazon DynamoDB"
+    ],
+    "resposta_correta": "Amazon Redshift",
+    "explicacao": "Amazon Redshift é um serviço gerenciado que permite criar e gerenciar data warehouses em escala de petabytes, facilitando análises rápidas."
+},
+{
+    "pergunta": "47. Qual serviço da AWS permite hospedar facilmente uma aplicação web sem a necessidade de provisionar ou gerenciar servidores?",
+    "opcoes": [
+        "AWS Elastic Beanstalk",
+        "Amazon EC2",
+        "Amazon RDS",
+        "AWS IAM"
+    ],
+    "resposta_correta": "AWS Elastic Beanstalk",
+    "explicacao": "AWS Elastic Beanstalk facilita a implantação e o gerenciamento de aplicações web sem a necessidade de provisionar ou gerenciar infraestrutura subjacente."
+},
+{
+    "pergunta": "48. Qual serviço da AWS permite automatizar a implantação e gerenciamento de contêineres sem precisar provisionar infraestrutura subjacente?",
+    "opcoes": [
+        "AWS Fargate",
+        "Amazon ECS",
+        "AWS Lambda",
+        "Amazon EMR"
+    ],
+    "resposta_correta": "AWS Fargate",
+    "explicacao": "AWS Fargate permite executar contêineres sem gerenciar a infraestrutura subjacente, automatizando o provisionamento e dimensionamento de recursos."
+},
+{
+    "pergunta": "49. Qual serviço da AWS é usado para gerenciar e analisar logs em tempo real?",
+    "opcoes": [
+        "AWS CloudTrail",
+        "Amazon CloudWatch Logs",
+        "AWS Config",
+        "Amazon Redshift"
+    ],
+    "resposta_correta": "Amazon CloudWatch Logs",
+    "explicacao": "Amazon CloudWatch Logs permite coletar e analisar logs em tempo real de recursos AWS e aplicações, facilitando a detecção de problemas."
+},
+{
+    "pergunta": "50. Qual serviço da AWS oferece computação sem servidor para executar código em resposta a eventos, sem gerenciar servidores?",
+    "opcoes": [
+        "AWS Fargate",
+        "Amazon EC2",
+        "AWS Lambda",
+        "AWS Glue"
+    ],
+    "resposta_correta": "AWS Lambda",
+    "explicacao": "AWS Lambda permite executar código em resposta a eventos sem provisionar ou gerenciar servidores, escalando automaticamente."
+},
+{
+    "pergunta": "51. Qual serviço da AWS permite a criação de um serviço de entrega de vídeos sob demanda com escalabilidade global?",
+    "opcoes": [
+        "Amazon CloudFront",
+        "Amazon S3",
+        "AWS Elemental MediaConvert",
+        "Amazon SNS"
+    ],
+    "resposta_correta": "AWS Elemental MediaConvert",
+    "explicacao": "AWS Elemental MediaConvert oferece soluções de codificação e transcodificação de vídeo para criar serviços de entrega de vídeos sob demanda escaláveis."
+},
+{
+    "pergunta": "52. Qual das seguintes ferramentas ajuda a visualizar as dependências entre recursos na AWS?",
+    "opcoes": [
+        "AWS Config",
+        "AWS X-Ray",
+        "Amazon CloudWatch",
+        "AWS CloudTrail"
+    ],
+    "resposta_correta": "AWS X-Ray",
+    "explicacao": "AWS X-Ray permite visualizar as dependências entre recursos e serviços em aplicações distribuídas, facilitando a análise de desempenho e rastreamento de falhas."
+},
+{
+    "pergunta": "53. Qual serviço da AWS permite executar cargas de trabalho de analytics de dados em tempo real?",
+    "opcoes": [
+        "AWS Glue",
+        "Amazon EMR",
+        "Amazon Kinesis",
+        "Amazon Redshift"
+    ],
+    "resposta_correta": "Amazon Kinesis",
+    "explicacao": "Amazon Kinesis permite processar grandes quantidades de dados em tempo real para aplicações de análise, processamento e machine learning."
+},
+{
+    "pergunta": "54. Qual das seguintes práticas ajuda a garantir uma maior disponibilidade na AWS?",
+    "opcoes": [
+        "Executar todos os recursos em uma única zona de disponibilidade",
+        "Configurar backups automáticos regulares",
+        "Desativar failover automático",
+        "Utilizar instâncias spot sempre que possível"
+    ],
+    "resposta_correta": "Configurar backups automáticos regulares",
+    "explicacao": "Backups automáticos regulares ajudam a garantir a recuperação rápida de dados em caso de falhas, contribuindo para a alta disponibilidade."
+},
+{
+    "pergunta": "55. Qual serviço da AWS oferece gerenciamento de identidades federadas, permitindo que usuários externos acessem os recursos da AWS?",
+    "opcoes": [
+        "AWS IAM",
+        "Amazon Cognito",
+        "AWS Organizations",
+        "AWS Directory Service"
+    ],
+    "resposta_correta": "AWS IAM",
+    "explicacao": "AWS IAM permite o gerenciamento de identidades federadas, possibilitando que usuários externos ou de outros sistemas acessem os recursos da AWS com permissões adequadas."
+},
+{
+    "pergunta": "56. Qual ferramenta da AWS fornece um ambiente de desenvolvimento para criar, testar e rodar aplicações baseadas em Lambda?",
+    "opcoes": [
+        "AWS CodeCommit",
+        "AWS Cloud9",
+        "AWS CodeBuild",
+        "AWS CloudFormation"
+    ],
+    "resposta_correta": "AWS Cloud9",
+    "explicacao": "AWS Cloud9 é um ambiente de desenvolvimento integrado que permite criar, editar e executar código diretamente no navegador, incluindo suporte para funções Lambda."
+},
+{
+    "pergunta": "57. Qual dos seguintes serviços da AWS permite a migração de máquinas virtuais locais para a AWS?",
+    "opcoes": [
+        "AWS Migration Hub",
+        "AWS DMS",
+        "AWS Server Migration Service",
+        "Amazon S3 Transfer Acceleration"
+    ],
+    "resposta_correta": "AWS Server Migration Service",
+    "explicacao": "O AWS Server Migration Service (SMS) facilita a migração de servidores locais, incluindo máquinas virtuais, para a AWS com automação e agendamento."
+},
+{
+    "pergunta": "58. Qual serviço da AWS permite distribuir conteúdo estático e dinâmico globalmente com baixa latência?",
+    "opcoes": [
+        "Amazon CloudFront",
+        "Amazon S3",
+        "AWS Fargate",
+        "AWS Lambda"
+    ],
+    "resposta_correta": "Amazon CloudFront",
+    "explicacao": "Amazon CloudFront é um serviço de entrega de conteúdo (CDN) que permite distribuir conteúdo estático e dinâmico globalmente com baixa latência."
+},
+{
+    "pergunta": "59. Qual serviço da AWS ajuda a configurar ambientes para aprendizado de máquina sem a necessidade de gerenciar a infraestrutura subjacente?",
+    "opcoes": [
+        "Amazon Redshift",
+        "Amazon SageMaker",
+        "Amazon Elastic MapReduce (EMR)",
+        "AWS Glue"
+    ],
+    "resposta_correta": "Amazon SageMaker",
+    "explicacao": "Amazon SageMaker permite a construção, treinamento e implantação de modelos de machine learning em uma infraestrutura totalmente gerenciada."
+},
+{
+    "pergunta": "60. Qual serviço da AWS é usado para provisionar e gerenciar chaves criptográficas?",
+    "opcoes": [
+        "AWS Shield",
+        "AWS KMS",
+        "AWS Secrets Manager",
+        "Amazon GuardDuty"
+    ],
+    "resposta_correta": "AWS KMS",
+    "explicacao": "AWS KMS (Key Management Service) permite o gerenciamento e o provisionamento de chaves criptográficas para proteger seus dados na AWS."
+},
+{
+    "pergunta": "61. Qual serviço da AWS oferece uma plataforma para criar APIs e gerenciar seu ciclo de vida?",
+    "opcoes": [
+        "Amazon API Gateway",
+        "AWS CloudFormation",
+        "AWS CodePipeline",
+        "Amazon CloudFront"
+    ],
+    "resposta_correta": "Amazon API Gateway",
+    "explicacao": "Amazon API Gateway facilita a criação, publicação, manutenção, monitoramento e segurança de APIs em escala."
+},
+{
+    "pergunta": "62. Qual dos serviços a seguir é considerado serverless e permite a execução de workflows automatizados?",
+    "opcoes": [
+        "AWS Step Functions",
+        "AWS Fargate",
+        "AWS CodeBuild",
+        "Amazon EC2"
+    ],
+    "resposta_correta": "AWS Step Functions",
+    "explicacao": "AWS Step Functions permite a coordenação de vários serviços AWS em workflows automatizados, sendo um serviço totalmente serverless."
+},
+{
+    "pergunta": "63. Qual serviço da AWS ajuda a monitorar e auditar as atividades de contas e usuários na AWS?",
+    "opcoes": [
+        "AWS Shield",
+        "Amazon CloudWatch",
+        "AWS CloudTrail",
+        "AWS Trusted Advisor"
+    ],
+    "resposta_correta": "AWS CloudTrail",
+    "explicacao": "AWS CloudTrail monitora e audita todas as atividades de contas e usuários, fornecendo histórico detalhado de ações realizadas nos recursos da AWS."
+},
+{
+    "pergunta": "64. Qual dos serviços a seguir permite a criação de uma rede global de entrega de aplicativos, utilizando regiões e localidades?",
+    "opcoes": [
+        "Amazon Route 53",
+        "AWS Global Accelerator",
+        "Amazon CloudFront",
+        "AWS Transit Gateway"
+    ],
+    "resposta_correta": "AWS Global Accelerator",
+    "explicacao": "AWS Global Accelerator permite a criação de uma rede global de entrega de aplicativos, melhorando a disponibilidade e a performance através de várias regiões."
+},
+{
+    "pergunta": "65. Qual dos serviços a seguir oferece monitoramento contínuo para conformidade com políticas e auditorias de segurança?",
+    "opcoes": [
+        "AWS Config",
+        "Amazon Inspector",
+        "AWS WAF",
+        "AWS Systems Manager"
+    ],
+    "resposta_correta": "AWS Config",
+    "explicacao": "AWS Config oferece monitoramento contínuo dos recursos da AWS para garantir conformidade com políticas de segurança e auditorias."
+}
 ]
